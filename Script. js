@@ -13,5 +13,11 @@ body: JSON.stringify({text:msg})
 let data = await res.json()
 
 document.getElementById("reply").innerText = data.reply
+speak(data.reply)
 
+}
+function speak (text){
+let speech = new speechsynthesisisUtterance (text)
+speech.lang ="en-US"
+speechSynthesis . speak(speech)
 }
