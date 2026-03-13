@@ -20,4 +20,8 @@ function speak (text){
 let speech = new speechsynthesisisUtterance (text)
 speech.lang ="en-US"
 speechSynthesis . speak(speech)
+speech. onend = function (){
+orb.style.transform = "scale (1)"
+}
+speechSynthesis .speak(speech)
 }
