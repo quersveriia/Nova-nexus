@@ -1,0 +1,17 @@
+async function sendMessage(){
+
+let msg = document.getElementById("message").value
+
+let res = await fetch("http://localhost:8000/chat",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body: JSON.stringify({text:msg})
+})
+
+let data = await res.json()
+
+document.getElementById("reply").innerText = data.reply
+
+}
